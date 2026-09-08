@@ -1,5 +1,5 @@
 def analyze_user_activity(log_file_path: str) -> dict:
-users = set()
+    users = set()
     action_counts = {}
     user_duration = {}
 
@@ -34,20 +34,15 @@ users = set()
         most_active_user = None
         average_session_time = 0.0
 
-    result = {
+    return {
         "action_counts": action_counts,
         "average_session_time": average_session_time,
         "most_active_user": most_active_user,
         "total_users": len(users)
     }
-    pass
+
 
 if __name__ == "__main__":
     result = analyze_user_activity("activity.log")
     from pprint import pprint
     pprint(result)
-
-# {'action_counts': {'login': 2, 'logout': 2, 'submit': 1, 'view': 2},
-#  'average_session_time': 160.0,
-#  'most_active_user': 'u002',
-#  'total_users': 2}
